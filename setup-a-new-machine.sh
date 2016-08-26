@@ -10,7 +10,7 @@
 #### OPEN - Sanity Check ####
 #############################
 
-  echo "do not run this script in one go (see file setup-a-new-machine.sh). hit ctrl-c NOW"
+  echo "do not run this script in one go (comment out this line in file setup-a-new-machine.sh). hit ctrl-c NOW"
   read -n 1
   
 ##############################
@@ -28,7 +28,20 @@
 ## https://github.com/alrra/dotfiles/issues/13
 ## https://github.com/alrra/dotfiles/issues/10
 
-if ! xcode-select --print-path &> /dev/null; then
+echo "[Start] Installing ... XCode Command Line Tools"
+
+if xcode-select --print-path &> /dev/null; then
+# if xcode clt is found
+
+    echo "[Sanity Report] Xcode CLT ... already exists"
+    echo "[End] Xcode Command Line Tools ... installation"
+    echo "[NOW]Moving On ..."
+
+else
+#if xcode clt is not found
+
+    echo "[Sanity Report] Xcode CLT ... was not found"
+    echo "[NOW] Attempting to download and install Xcode CLT"
 
     # Prompt user to install the XCode Command Line Tools
     xcode-select --install &> /dev/null
@@ -56,6 +69,8 @@ if ! xcode-select --print-path &> /dev/null; then
 
     sudo xcodebuild -license
     print_result $? 'Agree with the XCode Command Line Tools licence'
+    
+    echo "[End] Xcode Command Line Tools ... installation"
 
 fi
 ##########################################
