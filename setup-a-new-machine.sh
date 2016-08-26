@@ -30,6 +30,8 @@
 
 if ! xcode-select --print-path &> /dev/null; then
 
+    echo "Xcode CLT were not found, attempting to install them now ..."
+
     # Prompt user to install the XCode Command Line Tools
     xcode-select --install &> /dev/null
 
@@ -56,6 +58,8 @@ if ! xcode-select --print-path &> /dev/null; then
 
     sudo xcodebuild -license
     print_result $? 'Agree with the XCode Command Line Tools licence'
+    
+    echo "Xcode CLT installation complete"
 
 fi
 ##########################################
