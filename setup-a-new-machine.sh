@@ -1,6 +1,6 @@
-#############################
+############################
 #### GENERAL WARNING!!! ####
-#############################
+############################
 # Do not run this file as you see it
 # Comment out the entire file and uncomment it section by section
 # Understand, Edit and Run each section as you uncomment it
@@ -27,8 +27,6 @@
 ## https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
 ## https://github.com/alrra/dotfiles/issues/13
 ## https://github.com/alrra/dotfiles/issues/10
-
-
 
 if ! xcode-select --print-path &> /dev/null; then
 
@@ -70,12 +68,12 @@ fi
 ### homebrew!
 
 # (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
-mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+##!! mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
+##!! export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # install all the things
-./brew.sh
-./brew-cask.sh
+##!! ./brew.sh
+##!! ./brew-cask.sh
 
 ### end of homebrew
 ##############################################################################################################
@@ -89,31 +87,31 @@ export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
-bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
+##!! bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
 # Type `git open` to open the GitHub page or website for a repository.
-npm install -g git-open
+##!! npm install -g git-open
 
 # fancy listing of recent branches
-npm install -g git-recent
+##!! npm install -g git-recent
 
 # sexy git diffs
-npm install -g diff-so-fancy
+##!! npm install -g diff-so-fancy
 
 # trash as the safe `rm` alternative
-npm install --global trash-cli
+##!! npm install --global trash-cli
 
 
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git ~/code/z
+##!! git clone https://github.com/rupa/z.git ~/code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z is hooked up in .bash_profile
 
 
 # github.com/thebitguru/play-button-itunes-patch
 # disable itunes opening on media keys
-git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
+##!! git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
 
 
 # my magic photobooth symlink -> dropbox. I love it.
@@ -125,15 +123,15 @@ git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-but
 
 
 # for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
+##!! sudo easy_install Pygments
 
 
 # change to bash 4 (installed by homebrew)
-BASHPATH=$(brew --prefix)/bin/bash
+##!! BASHPATH=$(brew --prefix)/bin/bash
 #sudo echo $BASHPATH >> /etc/shells
-sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
-chsh -s $BASHPATH # will set for current user only.
-echo $BASH_VERSION # should be 4.x not the old 3.2.X
+##!! sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
+##!! chsh -s $BASHPATH # will set for current user only.
+##!! echo $BASH_VERSION # should be 4.x not the old 3.2.X
 # Later, confirm iterm settings aren't conflicting.
 
 
@@ -142,7 +140,7 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+##!! ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
 
 ###
@@ -161,7 +159,7 @@ ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/su
 
 # set up osx defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
+##!! sh .osx
 
 # setup and run Rescuetime!
 
@@ -178,7 +176,7 @@ sh .osx
 #   now .gitconfig can be shared across all machines and only the .local changes
 
 # symlink it up!
-./symlink-setup.sh
+##!! ./symlink-setup.sh
 
 # add manual symlink for .ssh/config and probably .config/fish
 
