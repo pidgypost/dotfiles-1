@@ -1,11 +1,28 @@
-# copy paste this file in bit by bit.
-# don't run it.
-  echo "do not run this script in one go. hit ctrl-c NOW"
-  read -n 1
+#############################
+#### GENERAL WARNING!!! ####
+#############################
+# Do not run this file as you see it
+# Comment out the entire file and uncomment it section by section
+# Understand, Edit and Run each section as you uncomment it
+# This is your sanity check
 
-##############################################################################################################
-### XCode Command Line Tools
-#      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
+#############################
+#### OPEN - Sanity Check ####
+#############################
+
+  echo "do not run this script in one go (see file setup-a-new-machine.sh). hit ctrl-c NOW"
+  read -n 1
+  
+##############################
+#### CLOSE - Sanity Check ####
+##############################
+
+
+#################
+#### OPEN - XCode Command Line Tools ####
+#################
+# Credits:
+## https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
 
 if ! xcode-select --print-path &> /dev/null; then
 
