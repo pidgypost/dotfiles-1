@@ -71,6 +71,7 @@ fi
 
 source $scriptPath/install-homebrew.sh
 source $scriptPath/install-brew-formulas.sh
+source $scriptPath/install-brew-casks.sh
 
 ##########################################
 #### CLOSE - Homebrew ####################
