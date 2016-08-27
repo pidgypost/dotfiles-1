@@ -3,6 +3,8 @@
 # to maintain cask ....
 brew update
 brew upgrade brew-cask
+brew cleanup
+brew cask cleanup
 
 
 # Install native apps
@@ -52,5 +54,3 @@ brew cask install firefox
 ##!! brew cask install licecap
 ##!! brew cask install utorrent
 
-brew cleanup
-brew cask cleanup
