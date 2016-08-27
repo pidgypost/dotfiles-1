@@ -1,7 +1,7 @@
 # Install command-line tools using Homebrew
 
 brew update
-brew upgrade
+brew upgrade --all
 
 brew install vim --with-override-system-vi
 brew install git
@@ -10,7 +10,17 @@ brew install wget --with-iri
 
 brew install bash
 brew install zsh
+# Switch to using brew-installed zsh as default shell
+if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/zsh;
+fi;
+
 brew install coreutils
+if [ ! -L /usr/local/bin/gsha256sum ]; then
+  sudo ln -sf /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+fi
+
 brew install findutils
 brew install gnu-sed --with-default-names
 brew install homebrew/dupes/grep
