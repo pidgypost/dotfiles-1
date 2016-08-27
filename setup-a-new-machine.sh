@@ -59,8 +59,6 @@ if ! xcode-select --print-path &> /dev/null; then
     sudo xcodebuild -license
     print_result $? 'Agree with the XCode Command Line Tools licence'
     
-    echo "Xcode CLT installation complete"
-
 fi
 ##########################################
 #### CLOSE - XCode Command Line Tools ####
