@@ -1,21 +1,5 @@
-############################
-#### GENERAL WARNING!!! ####
-############################
-# Do not run this file as you see it
-# Comment out the entire file and uncomment it section by section
-# Understand, Edit and Run each section as you uncomment it
-# This is your sanity check
-
-#############################
-#### OPEN - Sanity Check ####
-#############################
-
-  echo "do not run this script in one go (comment out this line in file setup-a-new-machine.sh). hit ctrl-c NOW"
-  read -n 1
-  
-##############################
-#### CLOSE - Sanity Check ####
-##############################
+app-root=$(dirname "$0")
+scriptPath=~/dotfiles-1/app/install-scripts
 
 
 #########################################
@@ -81,20 +65,16 @@ fi
 
 
 
-##############################################################################################################
-### homebrew!
+##########################################
+#### OPEN - Homebrew #####################
+##########################################
 
-# (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
-##!! mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-##!! export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+source $scriptPath/install-homebrew.sh
+source $scriptPath/install-brew-formulas.sh
 
-# install all the things
-##!! ./brew.sh
-##!! ./brew-cask.sh
-
-### end of homebrew
-##############################################################################################################
-
+##########################################
+#### CLOSE - Homebrew ####################
+##########################################
 
 
 
