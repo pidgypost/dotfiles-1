@@ -3,10 +3,15 @@
 brew update
 brew upgrade --all
 
-brew install vim --with-override-system-vi
+brew install vim --with-override-system-vi --with-lua
 brew install git
 brew install node # This installs `npm` too using the recommended installation method
 brew install wget --with-iri
+brew install fzf
+brew install hub
+brew install tmux
+brew install z
+brew install highlight
 
 brew install bash
 brew install zsh
@@ -15,6 +20,8 @@ if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
   echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
   chsh -s /usr/local/bin/zsh;
 fi;
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
 
 brew install coreutils
 if [ ! -L /usr/local/bin/gsha256sum ]; then
@@ -28,6 +35,10 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install rename
 brew install tree
+brew install ack
+
+#install vim setup
+curl http://j.mp/spf13-vim3 -L -o - | sh
 
 brew cleanup
 
