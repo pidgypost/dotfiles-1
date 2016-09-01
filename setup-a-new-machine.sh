@@ -1,8 +1,11 @@
 # dotfile setup for a fresh install of OSX 10.11+ 
 
 # Script Paths
-app-root=$(dirname "$0")
-scriptPath=~/dotfiles-1/app/install-scripts
+project_root=$(dirname "$0");
+path_dotfiles=~/dotfiles-1/dotfiles
+path_app_root=~/dotfiles-1/app
+path_install_scripts=~/dotfiles-1/app/install-scripts
+path_install_functions=~/dotfiles-1/app/install-functions
 
 # Step 1 - Install Xcode Command Line Tools
 # This will trigger automatically when attempting to install
@@ -24,9 +27,10 @@ scriptPath=~/dotfiles-1/app/install-scripts
 #### OPEN - Homebrew #####################
 ##########################################
 
-source $scriptPath/install-homebrew.sh
-source $scriptPath/install-brew-formulas.sh
-source $scriptPath/install-brew-casks.sh
+source $path_install_scripts/install-homebrew.sh
+source $path_install_scripts/install-brew-formulas.sh
+source $path_install_scripts/install-brew-casks.sh
+source $path_install_scripts/install-symlinks.sh
 #install spf13-vim
 #curl http://j.mp/spf13-vim3 -L -o - | sh
 #symlink dotfiles
