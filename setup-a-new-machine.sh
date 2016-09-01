@@ -1,67 +1,22 @@
+# dotfile setup for a fresh install of OSX 10.11+ 
+
+# Script Paths
 app-root=$(dirname "$0")
 scriptPath=~/dotfiles-1/app/install-scripts
 
+# Step 1 - Install Xcode Command Line Tools
+# This will trigger automatically when attempting to install
+# Homebrew in Step 2. Follow the onscreen instructions
+# and continue to Homebrew install after complete
 
-#########################################
-#### OPEN - XCode Command Line Tools ####
-#########################################
-# Desctiption:
-## This snippet will walk the user through installing XCode CLT if it is not installed
-# Credits:
-## https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
-## https://github.com/alrra/dotfiles/issues/13
-## https://github.com/alrra/dotfiles/issues/10
+#Step 2 - Install Homebrew
+#Description:
+##Homebrew is a OSX package manager that will install/update/manage
+##all the applications we would otherwise manually download and install
 
-echo "[Start] Installing ... XCode Command Line Tools"
 
-if xcode-select --print-path &> /dev/null; then
-# if xcode clt is found
 
-    echo "[Sanity Report] Xcode CLT ... already exists"
-    echo "[End] Xcode Command Line Tools ... installation"
-    echo "[NOW]Moving On ..."
 
-else
-#if xcode clt is not found
-
-    echo "[Sanity Report] Xcode CLT ... was not found"
-    echo "[NOW] Attempting to download and install Xcode CLT"
-
-    echo "Xcode CLT were not found, attempting to install them now ..."
-
-    # Prompt user to install the XCode Command Line Tools
-    xcode-select --install &> /dev/null
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Wait until the XCode Command Line Tools are installed
-    until xcode-select --print-path &> /dev/null; do
-        sleep 5
-    done
-
-    print_result $? 'Install XCode Command Line Tools'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Point the `xcode-select` developer directory to
-    # the appropriate directory from within `Xcode.app`
-
-    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
-    print_result $? 'Make "xcode-select" developer directory point to Xcode'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Prompt user to agree to the terms of the Xcode license
-
-    sudo xcodebuild -license
-    print_result $? 'Agree with the XCode Command Line Tools licence'
-    
-    echo "[End] Xcode Command Line Tools ... installation"
-
-fi
-##########################################
-#### CLOSE - XCode Command Line Tools ####
-##########################################
 
 
 
@@ -72,6 +27,12 @@ fi
 source $scriptPath/install-homebrew.sh
 source $scriptPath/install-brew-formulas.sh
 source $scriptPath/install-brew-casks.sh
+#install spf13-vim
+#curl http://j.mp/spf13-vim3 -L -o - | sh
+#symlink dotfiles
+#restart terminal
+#setup osx
+#login to apps with chef
 
 ##########################################
 #### CLOSE - Homebrew ####################

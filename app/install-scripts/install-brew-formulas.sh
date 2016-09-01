@@ -1,33 +1,31 @@
 # Install command-line tools using Homebrew
 
+#sanity check
 brew update
 brew upgrade --all
 
+#core features
+##IDE
 brew install vim --with-override-system-vi --with-lua
-brew install git
-brew install node # This installs `npm` too using the recommended installation method
-brew install wget --with-iri
-brew install fzf
-brew install hub
-brew install tmux
-brew install z
-brew install highlight
 
+##Versioning
+brew install git
+
+##Shells
 brew install bash
 brew install zsh
-# Switch to using brew-installed zsh as default shell
-if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/zsh;
-fi;
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
+    # Switch to using brew-installed zsh as default shell
+    if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
+      echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+      chsh -s /usr/local/bin/zsh;
+    fi;
 
+#Nice to haves
+##OSX/Terminal tools
 brew install coreutils
-if [ ! -L /usr/local/bin/gsha256sum ]; then
-  sudo ln -sf /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-fi
-
+    if [ ! -L /usr/local/bin/gsha256sum ]; then
+      sudo ln -sf /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+    fi
 brew install findutils
 brew install gnu-sed --with-default-names
 brew install homebrew/dupes/grep
@@ -36,10 +34,21 @@ brew install homebrew/dupes/screen
 brew install rename
 brew install tree
 brew install ack
+brew install wget --with-iri
+brew install highlight
 
-#install vim setup
-curl http://j.mp/spf13-vim3 -L -o - | sh
+##ZSH Addons
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
 
+##Coding Goodies
+brew install node # This installs `npm` too using the recommended installation method
+brew install fzf
+brew install hub
+brew install tmux
+brew install z
+
+#sanity check
 brew cleanup
 
 
