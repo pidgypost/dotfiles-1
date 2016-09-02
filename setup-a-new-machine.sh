@@ -31,7 +31,7 @@ source $path_install_scripts/install-homebrew.sh
 source $path_install_scripts/install-brew-formulas.sh
 source $path_install_scripts/install-brew-casks.sh
 #install spf13-vim
-curl http://j.mp/spf13-vim3 -L -o - | sh
+#curl http://j.mp/spf13-vim3 -L -o - | sh
 #symlink dotfiles
 source $path_install_scripts/install-symlinks.sh
 #restart terminal
