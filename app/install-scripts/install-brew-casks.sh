@@ -23,6 +23,7 @@ brew cask install adobe-creative-cloud
 # dev
 brew cask install iterm2
 brew cask install sublime-text
+brew cask install vmware-fusion
 ##!! brew cask install imagealpha
 ##!! brew cask install imageoptim
 
