@@ -8,9 +8,9 @@ done
 unset file
 
 # to help sublimelinter etc with finding my PATHS
-case $- in
-   *i*) source ~/.extra
-esac
+# case $- in
+#    *i*) source ~/.extra
+# esac
 
 
 # generic colouriser
@@ -66,7 +66,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # z beats cd most of the time.
 #   github.com/rupa/z
-source ~/code/z/z.sh
+# source ~/code/z/z.sh
 
 
 

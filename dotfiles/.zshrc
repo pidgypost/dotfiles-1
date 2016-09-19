@@ -1,3 +1,6 @@
+#
+#the following line is necessary because we installed antigen using brew
+ source $(brew --prefix)/share/antigen/antigen.zsh
 # uncomment to profile prompt startup with zprof
 # zmodload zsh/zprof
 
@@ -12,7 +15,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 
 
 # antigen time!
-source ~/code/antigen/antigen.zsh
+#source ~/code/antigen/antigen.zsh
 
 
 ######################################################################
@@ -31,7 +34,7 @@ $b command-not-found
 $b extract
 
 # atom editor
-$b atom
+#$b atom
 
 # homebrew  - autocomplete on `brew install`
 $b brew
@@ -41,7 +44,7 @@ $b brew-cask
 $b robbyrussell/oh-my-zsh plugins/z
 
 # nicoulaj's moar completion files for zsh -- not sure why disabled.
-# $b zsh-users/zsh-completions src
+ $b zsh-users/zsh-completions src
 
 # Syntax highlighting on the readline
 $b zsh-users/zsh-syntax-highlighting
@@ -50,7 +53,7 @@ $b zsh-users/zsh-syntax-highlighting
 $b zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 
 # suggestions
-$b tarruda/zsh-autosuggestions
+#$b tarruda/zsh-autosuggestions
 
 # colors for all files!
 $b trapd00r/zsh-syntax-highlighting-filetypes
@@ -115,3 +118,5 @@ source ~/.bash_profile
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
